@@ -49,5 +49,12 @@ Complete!
 
 ### Server 2.
 
-Same as Server 1 in principle.
+Same as Server 1 in principle. In the Server 2 Vagrant file, choose a different IP:
 
+    $ vim vagrant/server2/Vagrantfile
+    config.vm.box = "server2"
+    config.vm.network :private_network, ip: "192.168.33.11"
+
+After finishing the set up, tail td-agent log process for each server.
+
+    $ tail -f /var/log/td-agent/td-agent.log
